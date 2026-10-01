@@ -1,0 +1,3 @@
+document.getElementById('year').textContent=new Date().getFullYear();
+const btn=document.querySelector('.menu'),nav=document.querySelector('.topbar nav');btn.addEventListener('click',()=>{const o=nav.classList.toggle('open');btn.setAttribute('aria-expanded',o)});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.08});document.querySelectorAll('section>*, .wrap>*, article').forEach(el=>{if(!el.closest('.topbar')){el.classList.add('reveal');io.observe(el)}});
